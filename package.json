@@ -244,8 +244,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "cd client && npm install && npm run build && cd ../server && npm install && npm start",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd client && npm install && npm run build && cd ../server && npm install && npm start && react-scripts start",
+    "test": "echo \"Error: no test specified\" && react-scripts test exit 1",
     "build": "react-scripts build"
   },
   "keywords": [],
