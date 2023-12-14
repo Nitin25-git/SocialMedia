@@ -1,8 +1,8 @@
-\{
+{
   "name": "mern-social-media-master",
   "version": "1.0.0",
   "description": "Build a COMPLETE Fullstack Responsive MERN App with Auth, Likes, Dark Mode | React, MongoDB, MUI",
-  "main": "server/index.js",  // Adjusted path to the server entry file
+  "main": "server/index.js", 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
