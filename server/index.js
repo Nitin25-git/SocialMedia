@@ -43,15 +43,15 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-
-const __dirname1 = path.resolve();
-
+/* Serve static files */
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname1, "/client/build")));
+  // Serve static files from the React app
+  app.use(express.static(path.join(__dirname, "../client/build")));
 
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname1, "client", "build", "index.html"))
-  );
+  // For any other routes, serve the React app's HTML file
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+  });
 } else {
   app.get("/", (req, res) => {
     res.send("API is running..");
@@ -82,5 +82,3 @@ mongoose
     // Post.insertMany(posts);
   })
   .catch((error) => console.log(`${error} did not connect`));
-
-  
